@@ -1,0 +1,55 @@
+# ============================================================================
+# 📋 EXEMPLO DE CONFIGURAÇÃO PARA POSTGRESQL
+# ============================================================================
+#
+# COMO USAR:
+# 1. Descomente todas as linhas abaixo (remova o # do início)
+# 2. Comente as configurações do H2 em application.properties
+# 3. Configure os valores: host, porta, database, usuário, senha
+# 4. Certifique-se de que PostgreSQL está rodando
+# 5. Execute: mvn clean install && mvn spring-boot:run
+#
+
+# ============================================================================
+# 🗄️  CONFIGURAÇÃO DO BANCO POSTGRESQL
+# ============================================================================
+spring.datasource.url=jdbc:postgresql://localhost:5432/automanager
+spring.datasource.driverClassName=org.postgresql.Driver
+spring.datasource.username=postgres
+spring.datasource.password=sua_senha_postgresql
+
+# ============================================================================
+# 🗄️  CONFIGURAÇÃO JPA/HIBERNATE
+# ============================================================================
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQL10Dialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=false
+spring.jpa.properties.hibernate.format_sql=false
+
+# ============================================================================
+# 🏊 POOL DE CONEXÕES (HIKARI) - OPCIONAL, MELHORA PERFORMANCE
+# ============================================================================
+spring.datasource.hikari.maximum-pool-size=10
+spring.datasource.hikari.minimum-idle=5
+spring.datasource.hikari.connection-timeout=30000
+spring.datasource.hikari.idle-timeout=600000
+spring.datasource.hikari.max-lifetime=1800000
+
+# ============================================================================
+# 📝 VALORES PADRÃO PARA CONFIGURAÇÃO
+# ============================================================================
+# Host: localhost (mesma máquina) ou IP do servidor PostgreSQL
+# Porta: 5432 (padrão do PostgreSQL)
+# Database: automanager (deve ser criado previamente)
+# Usuário: postgres (padrão) ou outro usuário criado
+# Senha: senha definida na instalação do PostgreSQL
+#
+# EXEMPLO ALTERNATIVO (servidor remoto):
+# spring.datasource.url=jdbc:postgresql://db.example.com:5432/automanager
+# spring.datasource.username=usuario_pg
+# spring.datasource.password=senha_segura_123
+#
+# DIALETOS DISPONÍVEIS (conforme versão do PostgreSQL):
+# - PostgreSQL9Dialect (para PostgreSQL 9.x)
+# - PostgreSQL10Dialect (para PostgreSQL 10+) ← RECOMENDADO
+# - PostgreSQL13Dialect (para PostgreSQL 13+)

@@ -1,0 +1,50 @@
+# ============================================================================
+# 📋 EXEMPLO DE CONFIGURAÇÃO PARA MYSQL
+# ============================================================================
+#
+# COMO USAR:
+# 1. Descomente todas as linhas abaixo (remova o # do início)
+# 2. Comente as configurações do H2 em application.properties
+# 3. Configure os valores: host, porta, usuário, senha
+# 4. Certifique-se de que MySQL está rodando
+# 5. Execute: mvn clean install && mvn spring-boot:run
+#
+
+# ============================================================================
+# 🗄️  CONFIGURAÇÃO DO BANCO MYSQL
+# ============================================================================
+spring.datasource.url=jdbc:mysql://localhost:3306/automanager?useSSL=false&serverTimezone=UTC
+spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+spring.datasource.username=root
+spring.datasource.password=sua_senha_mysql
+
+# ============================================================================
+# 🗄️  CONFIGURAÇÃO JPA/HIBERNATE
+# ============================================================================
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=false
+spring.jpa.properties.hibernate.format_sql=false
+
+# ============================================================================
+# 🏊 POOL DE CONEXÕES (HIKARI) - OPCIONAL, MELHORA PERFORMANCE
+# ============================================================================
+spring.datasource.hikari.maximum-pool-size=10
+spring.datasource.hikari.minimum-idle=5
+spring.datasource.hikari.connection-timeout=30000
+spring.datasource.hikari.idle-timeout=600000
+spring.datasource.hikari.max-lifetime=1800000
+
+# ============================================================================
+# 📝 VALORES PADRÃO PARA CONFIGURAÇÃO
+# ============================================================================
+# Host: localhost (mesma máquina) ou IP do servidor MySQL
+# Porta: 3306 (padrão do MySQL)
+# Usuário: root (padrão) ou outro usuário criado
+# Senha: senha definida na instalação do MySQL
+# Banco: automanager (deve ser criado previamente)
+#
+# EXEMPLO ALTERNATIVO (servidor remoto):
+# spring.datasource.url=jdbc:mysql://192.168.1.100:3306/automanager?useSSL=false&serverTimezone=UTC
+# spring.datasource.username=usuario_mysql
+# spring.datasource.password=senha_segura_123

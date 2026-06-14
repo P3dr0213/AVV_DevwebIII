@@ -1,0 +1,4 @@
+com\autobots\ms\config\SegurancaConfig.class
+com\autobots\ms\MicroservicoApplication.class
+com\autobots\ms\controles\VendasControle.class
+com\autobots\ms\filtros\AutorizadorFiltro.class

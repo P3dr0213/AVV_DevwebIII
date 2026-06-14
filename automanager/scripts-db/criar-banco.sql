@@ -1,0 +1,71 @@
+-- ============================================================================
+-- 🗄️  SCRIPTS PARA CRIAR BANCO DE DADOS
+-- ============================================================================
+-- Use este arquivo para criar o banco em diferentes plataformas
+-- Escolha o script apropriado para seu banco de dados
+
+-- ============================================================================
+-- ✅ MYSQL - DESCOMENTE PARA USAR
+-- ============================================================================
+-- CREATE DATABASE IF NOT EXISTS automanager;
+-- USE automanager;
+-- GRANT ALL PRIVILEGES ON automanager.* TO 'root'@'localhost';
+-- FLUSH PRIVILEGES;
+
+-- ============================================================================
+-- ✅ POSTGRESQL - DESCOMENTE PARA USAR
+-- ============================================================================
+-- CREATE DATABASE automanager;
+--
+-- -- Conectar ao banco:
+-- -- \c automanager
+--
+-- -- Criar usuário (opcional):
+-- -- CREATE USER automanager_user WITH PASSWORD 'senha_segura';
+-- -- ALTER ROLE automanager_user SET client_encoding TO 'utf8';
+-- -- ALTER ROLE automanager_user SET default_transaction_isolation TO 'read committed';
+-- -- ALTER ROLE automanager_user SET default_transaction_deferrable TO on;
+-- -- GRANT ALL PRIVILEGES ON DATABASE automanager TO automanager_user;
+
+-- ============================================================================
+-- ✅ SQL SERVER - DESCOMENTE PARA USAR
+-- ============================================================================
+-- -- Execute via SQL Server Management Studio:
+--
+-- CREATE DATABASE automanager;
+-- GO
+--
+-- USE automanager;
+-- GO
+--
+-- -- Criar usuário (opcional):
+-- -- CREATE LOGIN automanager_user WITH PASSWORD = 'Senha_Segura_123';
+-- -- CREATE USER automanager_user FOR LOGIN automanager_user;
+-- -- GRANT ALL PRIVILEGES TO automanager_user;
+
+-- ============================================================================
+-- 📝 NOTAS IMPORTANTES
+-- ============================================================================
+--
+-- 1. H2 (padrão do projeto):
+--    - Nenhum script necessário
+--    - Banco criado automaticamente em memória
+--
+-- 2. MySQL:
+--    - Instale: https://dev.mysql.com/downloads/mysql/
+--    - Crie o banco com os comandos acima
+--    - Use usuário 'root' e senha configurada na instalação
+--
+-- 3. PostgreSQL:
+--    - Instale: https://www.postgresql.org/download/
+--    - Execute: psql -U postgres -f criar-banco.sql
+--    - Ou use: pgAdmin (interface gráfica)
+--
+-- 4. SQL Server:
+--    - Instale: https://www.microsoft.com/sql-server/sql-server-downloads
+--    - Abra SQL Server Management Studio
+--    - Execute o script na janela de query
+--
+-- 5. Após criar o banco:
+--    - Configure application.properties com HOST, PORTA, USUÁRIO, SENHA
+--    - Execute: mvn clean install && mvn spring-boot:run
